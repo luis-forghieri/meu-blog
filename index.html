@@ -1,39 +1,107 @@
-<!DOCTYPE html> 
-<html lang="pt-br"> 
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Blog</title> 
-<style> 
-header{ 
-background-color: #5AFF47; 
-color: #5A0092; 
-text-align: center; 
-max-width: 800px; 
-margin: 0 auto; 
-padding: 16px; 
-} 
-main{ 
-background-color: #5A0092; 
-color: #5AFF47; 
-max-width: 800px; 
-margin: 0 auto; 
-padding: 16px; 
-} 
-img{ 
-width: 80px; 
-height: 80px; 
-} 
-</style> 
-</head> 
-<body> 
-<header> 
-<h1>geekverso</h1> 
-<p>vou falar algumas curiosidades geeks!?</p> </header> 
-<main> 
-<img src="logo.png" alt="É uma imagem quadrada com fundo lilás bem clarinho. No meio tá escrito "GEEKVERSO BLOG GEEK" com umas letras grandes em 3D. Em volta do nome tem vários desenhos nerds espalhados: um controle de videogame antigo, uma espada azul pixelada, um dado de RPG, a Manopla do Infinito, uma estrela do Mario, naves espaciais e uma poção. O estilo é bem colorido, parecendo desenho animado."> <h2>Bem-Vindo a meu blog vamos falar sobre algumas curiosidades?!</h2> 
-<p>Por: Luís Miguel Moreira Forghieri</p> 
-<p>Bom dia! Sejam muito bem-vindos ao meu blog sobre a area!</p> 
-<p>Tudo bem? hoje iremos falar mais sobre geek e curiosidades de herois e muitas outras coisas,como hq’s filmes e tudo relacionado à cultura geek</p> </main> 
-</body> 
-</html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog do Luís Miguel</title>
+    <style>
+        header {
+            background-color: #5AFF47;
+            color: #5A0092;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        main {
+            background-color: #5A0092;
+            color: #5AFF47;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        
+        article {
+            display: flex;
+            margin-bottom: 20px; /* Adiciona espaço entre os posts */
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            margin-right: 16px; /* Espaço entre imagem e texto */
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+
+        /* Estilo básico para os botões */
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: inherit;
+            font-size: 1.2em;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>geekverso</h1>
+        <p>vou falar algumas curiosidades geeks!?</p>
+    </header>
+    <main>
+        <article>
+            <img src="imagem-blog.png"
+                alt="Um pequeno ícone 80x80 representando o GeekVerso, com o texto 'GEEKVERSO' em 3D e elementos nerds coloridos em estilo desenho animado.">
+            <div>
+                <h2>Bem-Vindo a meu blog vamos falar sobre algumas curiosidades?!</h2>
+                <p class="artigo-autor">Por: Luís Miguel Moreira Forghieri</p>
+                <p>Bom dia! Sejam muito bem-vindos ao meu blog sobre a area! Tudo bem? hoje iremos falar mais sobre geek e curiosidades de herois e muitas outras coisas,como hq’s filmes e tudo relacionado à cultura geek</p>
+                
+                <button class="like-button">❤️ <span>0</span></button>
+                <button class="thumb-button">👍 <span>0</span></button>
+            </div>
+        </article>
+        
+        <article>
+            <img src="imagem-blog.png"
+                alt="Um pequeno ícone 80x80 representando o GeekVerso, com o texto 'GEEKVERSO' em 3D e elementos nerds coloridos em estilo desenho animado.">
+            <div>
+                <h2>Título do 2º post - Exemplo</h2>
+                <p class="artigo-autor">Por: Luís Miguel Moreira Forghieri</p>
+                <p>Escrita do 2º post. Aqui você pode falar de uma curiosidade específica, como a primeira aparição de um herói ou um fato sobre um filme.</p>
+                
+                <button class="like-button">❤️ <span>0</span></button>
+                <button class="thumb-button">👍 <span>0</span></button>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        botoes.forEach(function (botao) {
+            let curtiu = false;
+            botao.addEventListener("click", botaoClicado);
+            function botaoClicado() {
+                console.log("fui clicado");
+                let texto = botao.querySelector("span");
+                if (curtiu === false){
+                    texto.textContent++;
+                    curtiu = true;
+                } else{
+                    texto.textContent--;
+                    curtiu = false;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
